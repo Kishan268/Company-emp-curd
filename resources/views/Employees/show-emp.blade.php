@@ -13,7 +13,7 @@
                         {{ session('status') }}
                         </div>
                     @endif
-                     <a href="{{route('home')}}" class="btn btn-success">Back</a>
+                     <a href="/" class="btn btn-success">Back</a>
                     <table id="example" class="table table-striped table-bordered mt-3" style="width:100%">
                     <thead>
                         <tr>

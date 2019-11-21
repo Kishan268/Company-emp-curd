@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Update Company') }}</div>
                 <div class="card-body">
-                   <a href="{{route('home')}}" class="btn btn-success">Back</a>
+                   <a href="/" class="btn btn-success">Back</a>
                    @if(session()->has('message'))
 				    <div class="alert alert-success">
 				        {{ session()->get('message') }}

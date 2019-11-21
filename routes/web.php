@@ -18,7 +18,7 @@ Route::get('/wel', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
 Route::resource('/companies', 'CompanyController');
 Route::resource('/employees', 'EmployeesController');
 Route::get('/comp_delete/{id}', 'CompanyController@destroy')->name('comp_delete');
