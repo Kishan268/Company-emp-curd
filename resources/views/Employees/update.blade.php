@@ -23,6 +23,8 @@
 @endif
 
 @foreach ($users as $data)
+@endforeach
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -55,16 +57,15 @@
 					      <label for="last_name"> Last Name</label>
 					      <input type="text" name="last_name" value="{{$data->last_name}}"  class="form-control"  id="last_name" placeholder="Last Name">
 					    </div>
-					 
-
 						    <div class="form-group col-md-6">
-						      <label for="company_id">{{$data->name}}</label>
-                    		@foreach($company as $data1)
-
+						      <label for="company_id"></label>
 						      <select id="company_id" class="form-control" name ="company_id">
-						     <option selected>{{$data1->name}}</option>
+                    		@foreach($company as $data1)
+						     <option  name ="company_id" value="{{$data1->id}}">{{$data1->name}}
+						     </option>
+						     {{-- </option>
 
-						        <option name ="company_id" value="{{$data1->id}}">{{$data1->name}}</option>
+						        <option >{{$data1->name}}</option> --}}
                     		@endforeach
 						      </select>
 						    </div>
@@ -90,7 +91,6 @@
             </div>
         </div>
     </div>
-@endforeach
 
 </div>
 @endsection

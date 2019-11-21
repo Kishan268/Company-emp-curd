@@ -48,10 +48,12 @@ class EmployeesController extends Controller
     public function edit($id)
     {
         $users = EmployeesModel::where('id',$id)->get();
-        $company = CompanyModel::where('id',$id)->get();
+        $company = CompanyModel::get();
+        $companyname = CompanyModel::get('id',$id);
+
 
         // dd($users);
-        return view('Employees.update',compact('users','company'));
+        return view('Employees.update',compact('users','company','companyname'));
     }
 
     
@@ -60,7 +62,7 @@ class EmployeesController extends Controller
         // dd($request);
         $id =$request->id;
 
-        $data = $request->validate(['first_name'=>'required','last_name'=>'required','email'=>'required','phone'=>'required']);
+        $data = $request->validate(['first_name'=>'required','last_name'=>'required','email'=>'required','phone'=>'required','company_id'=>'required']);
         
         $data1 = EmployeesModel::where('id', $id)->update($data); 
         
