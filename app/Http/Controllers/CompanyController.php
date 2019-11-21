@@ -73,9 +73,9 @@ class CompanyController extends Controller
         $data1 = CompanyModel::where('id', $id)->update($data); 
         
         if ($data1) {
-        return redirect()->back()->with('message', 'Company add successfully');
+        return redirect()->back()->with('message', 'Company updated successfully');
         }else{
-        return redirect()->back()->with('messageError', 'Company Not added');
+        return redirect()->back()->with('messageError', 'Company Not updated');
 
         }
     }

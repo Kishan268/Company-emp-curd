@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\CompanyModel;
 use App\EmployeesModel;
@@ -12,18 +11,14 @@ class EmployeesController extends Controller
     
     public function index()
     {
-        //
     }
-
     
     public function create()
     {
-       // return view('Employees.index');
        $users = CompanyModel::get();
         return view('Employees.index',compact('users')); 
             
     }
-
     
     public function store(Request $request)
     {
@@ -49,19 +44,13 @@ class EmployeesController extends Controller
     {
         $users = EmployeesModel::where('id',$id)->get();
         $company = CompanyModel::get();
-        $companyname = CompanyModel::get('id',$id);
-
-
-        // dd($users);
-        return view('Employees.update',compact('users','company','companyname'));
+        // $companyname = CompanyModel::get('id',$id);
+        return view('Employees.update',compact('users','company'));
     }
 
-    
     public function update(Request $request)
     {
-        // dd($request);
         $id =$request->id;
-
         $data = $request->validate(['first_name'=>'required','last_name'=>'required','email'=>'required','phone'=>'required','company_id'=>'required']);
         
         $data1 = EmployeesModel::where('id', $id)->update($data); 
@@ -77,10 +66,8 @@ class EmployeesController extends Controller
     
     public function destroy($id)
     {
-        // dd($id);
        
         $user = EmployeesModel::find($id)->delete();
-        // dd($user);
         $users = EmployeesModel::all();
         return view('home',compact('users'));
     }
