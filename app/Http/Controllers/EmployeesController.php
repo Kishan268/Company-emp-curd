@@ -43,7 +43,7 @@ class EmployeesController extends Controller
     public function edit($id)
     {
         $users = EmployeesModel::where('id',$id)->get();
-        $company = CompanyModel::where('id',$id)->get();
+        $company = CompanyModel::get();
         // $companyname = CompanyModel::get('id',$id);
         return view('Employees.update',compact('users','company'));
     }

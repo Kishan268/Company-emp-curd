@@ -49,13 +49,11 @@
 						    <div class="form-group col-md-6">
 						      <label for="company_id">Company</label>
 						      <select id="company_id" class="form-control" name ="company_id">
-						     <option selected>Choose...</option>
-
-                    	@foreach($users as $data)
-
-						        <option name ="company_id" value="{{$data->id}}">{{$data->name}}</option>
-                    	@endforeach
-
+						     <option selected name ="company_id" value="">Choose...</option>
+	                    	@foreach($users as $data)
+							    <option name ="company_id" value="{{$data->id}}">{{$data->name}}
+							    </option>
+	                    	@endforeach
 						      </select>
 						    </div>
 
