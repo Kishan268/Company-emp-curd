@@ -43,9 +43,7 @@ class CompanyController extends Controller
     {
         $users = EmployeesModel::where('company_id',$id)->simplePaginate(10);
         return view('Employees.show-emp',compact('users'));
-        
-        
-        
+           
     }
 
     public function edit($id)
@@ -71,16 +69,14 @@ class CompanyController extends Controller
             $data['logo'] = $file->logo;            
         }
         $data1 = CompanyModel::where('id', $id)->update($data); 
-        
         if ($data1) {
-        return redirect()->back()->with('message', 'Company updated successfully');
+            return redirect()->back()->with('message', 'Company updated successfully');
         }else{
-        return redirect()->back()->with('messageError', 'Company Not updated');
+            return redirect()->back()->with('messageError', 'Company Not updated');
 
         }
     }
 
-    
     public function destroy($id)
     {
         $user = CompanyModel::find($id)->delete();

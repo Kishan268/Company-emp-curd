@@ -43,7 +43,7 @@ class EmployeesController extends Controller
     public function edit($id)
     {
         $users = EmployeesModel::where('id',$id)->get();
-        $company = CompanyModel::get();
+        $company = CompanyModel::where('id',$id)->get();
         // $companyname = CompanyModel::get('id',$id);
         return view('Employees.update',compact('users','company'));
     }
@@ -66,7 +66,6 @@ class EmployeesController extends Controller
     
     public function destroy($id)
     {
-       
         $user = EmployeesModel::find($id)->delete();
         $users = EmployeesModel::all();
         return view('home',compact('users'));

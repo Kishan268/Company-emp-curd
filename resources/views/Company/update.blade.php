@@ -7,23 +7,14 @@
     <div class="alert alert-danger">
 
         <strong>Whoops!</strong> There were some problems with your input.
-
         <ul>
-
             @foreach ($errors->all() as $error)
-
-                <li>{{ $error }}</li>
-
+               <li>{{ $error }}</li>
             @endforeach
-
         </ul>
-
     </div>
-
 @endif
-
 @foreach ($users as $data)
-
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

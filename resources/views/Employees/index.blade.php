@@ -7,19 +7,12 @@
     <div class="alert alert-danger">
 
         <strong>Whoops!</strong> There were some problems with your input.
-
         <ul>
-
             @foreach ($errors->all() as $error)
-
                 <li>{{ $error }}</li>
-
             @endforeach
-
         </ul>
-
     </div>
-
 @endif
 <div class="container">
     <div class="row justify-content-center">
@@ -76,8 +69,6 @@
 					      <label for="phone">Phone</label>
 					      <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone" >
 					    </div>
-					  
-					    
 					  <!-- </div> -->
 					</div>
 					  <button type="submit" class="btn btn-primary">Add</button>

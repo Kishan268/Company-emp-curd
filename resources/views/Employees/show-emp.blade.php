@@ -34,11 +34,11 @@
                             <td>{{$data->last_name}}</td>
                             <td>{{$data->email}}</td>
                             <td>{{$data->phone}}</td>
-
-                            <td>
-                                
-                                <a href="{{route('employees.edit',$data->id)}}" class="btn btn-success">Edit</a>
-                                <a href="{{route('emp_delete',$data->id)}}" class="btn btn-danger" onclick="return checkDelete()">Delete</a></td>
+                            <td><a href="{{route('employees.edit',$data->id)}}" class="btn btn-success">Edit
+                                </a>
+                                <a href="{{route('emp_delete',$data->id)}}" class="btn btn-danger" onclick="return checkDelete()">Delete
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
