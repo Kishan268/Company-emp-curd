@@ -20,7 +20,7 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Company Name</th>
+                            <th>Company Names</th>
                             <th>Email</th>
                             <th>Logo</th>
                             <th>Action</th>
