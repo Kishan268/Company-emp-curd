@@ -14,6 +14,7 @@
 Route::get('/wel', function () {
     return view('welcome');
 });
+//testing git
 
 Auth::routes();
 
