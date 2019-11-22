@@ -24,6 +24,20 @@ Route::resource('/employees', 'EmployeesController');
 Route::get('/comp_delete/{id}', 'CompanyController@destroy')->name('comp_delete');
 Route::get('/emp_delete/{id}', 'EmployeesController@destroy')->name('emp_delete');
 // Route::Post('/companies/update/{$id}', 'CompanyController@update')->name('update');
+//Route for companies import export file .................
+Route::get('export', 'HomeController@export')->name('exp');
+Route::post('import', 'HomeController@import')->name('emp');
 
+//Route for Employies import export file .................
+Route::get('empExport', 'EmployeesController@export')->name('empExport');
+Route::post('empImport', 'EmployeesController@import')->name('empImport');
+
+
+Route::group(['middleware' => ['auth']], function() {
+
+    Route::resource('roles','RoleController');
+
+
+});
 
 

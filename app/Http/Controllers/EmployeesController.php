@@ -6,6 +6,10 @@ use App\CompanyModel;
 use App\EmployeesModel;
 use Illuminate\Support\Facades\DB;
 
+use App\Imports\EmpImport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\EmpExports;
+
 class EmployeesController extends Controller
 {
     
@@ -69,5 +73,21 @@ class EmployeesController extends Controller
         $user = EmployeesModel::find($id)->delete();
         $users = EmployeesModel::all();
         return view('home',compact('users'));
+    }
+
+    public function import() 
+    {   
+        if (request()->file('file')) {
+            $file = request()->file('file');
+            Excel::import(new EmpImport,$file);
+            return back()->with('message', 'File uploaded successfully!');
+        }else{
+            return back()->with('messageError', 'Select File!');
+        }
+    }
+
+    public function export() 
+    {
+       return  Excel::download(new EmpExports, 'users.xlsx');
     }
 }

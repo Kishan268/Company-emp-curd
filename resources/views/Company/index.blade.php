@@ -19,16 +19,18 @@
                 <div class="card-header">{{ __('Add Company') }}</div>
                 <div class="card-body">
                    <a href="/" class="btn btn-success">Back</a>
+                   
                    @if(session()->has('message'))
 				    <div class="alert alert-success">
 				        {{ session()->get('message') }}
 				    </div>
 					@endif
 					@if(session()->has('messageError'))
-				    <div class="alert alert-success">
+				    <div class="alert alert-danger">
 				        {{ session()->get('messageError') }}
 				    </div>
 					@endif
+
                  	<form action="{{route('companies.store')}}" method="POST" enctype="multipart/form-data">
                    	@csrf
 					  <div class="form-row">

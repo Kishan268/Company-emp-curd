@@ -13,9 +13,31 @@
                         {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{route('companies.create')}}" class="btn btn-success">Add Company</a>|| 
+                    <div class="col-md-8">
+                        <a href="{{route('companies.create')}}" class="btn btn-success">Add Company</a>|| 
                     <a href="{{route('employees.create')}}" class="btn btn-success">Add Empaloyee</a>
-                    
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
+                    @if(session()->has('messageError'))
+                    <div class="alert alert-success">
+                        {{ session()->get('messageError') }}
+                    </div>
+                    @endif
+                    <form action="{{route('emp')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                     <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label>Import User</label>
+                            <input type="file" name="file">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Import User">
+                    </form>
+                        <a href="{{route('exp')}}" class="btn btn-primary">Export Data</a>
+                        </div>
+                    </div>
+                </div>
                     <table id="example" class="table table-striped table-bordered mt-3" style="width:100%">
                     <thead>
                         <tr>

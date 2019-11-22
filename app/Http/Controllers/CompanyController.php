@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\CompanyModel;
 use App\EmployeesModel;
 
+
 class CompanyController extends Controller
 {
     public function index()
@@ -84,4 +85,6 @@ class CompanyController extends Controller
         return view('home',compact('users'));
 
     }
+
+    
 }
