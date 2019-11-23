@@ -14,7 +14,7 @@
                         </div>
                     @endif
                      <a href="/" class="btn btn-success">Back</a>
-                    {{--   @if(session()->has('message'))
+                      @if(session()->has('message'))
                     <div class="alert alert-success">
                         {{ session()->get('message') }}
                     </div>
@@ -27,15 +27,15 @@
                     <form action="{{route('empImport')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                      <div class="form-row">
-                        <div class="form-group col-md-8">
-                            <label>Import User</label>
+                        <div class="form-group col-md-6">
+                            <label>Import Employees</label>
                             <input type="file" name="file">
                             <input type="submit" name="submit" class="btn btn-primary" value="Import User">
                     </form>
-                        <a href="{{route('empExport')}}" class="btn btn-primary">Export Data</a>
+                        <a href="{{route('empExport')}}" class="btn btn-primary">Export Employees</a>
                     </div>
 
-                </div> --}}
+                </div>
                     <table id="example" class="table table-striped table-bordered mt-3" style="width:100%">
                     <thead>
                         <tr>

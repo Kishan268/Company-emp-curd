@@ -82,12 +82,12 @@ class EmployeesController extends Controller
             Excel::import(new EmpImport,$file);
             return back()->with('message', 'File uploaded successfully!');
         }else{
-            return back()->with('messageError', 'Select File!');
+            return back()->with('messageError', 'Please Select File!');
         }
     }
 
     public function export() 
     {
-       return  Excel::download(new EmpExports, 'users.xlsx');
+       return  Excel::download(new EmpExports, 'employees.xlsx');
     }
 }
